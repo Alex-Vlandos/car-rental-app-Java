@@ -1,8 +1,8 @@
 # Car Rental Management System
 A Java desktop application for managing a car rental agency with a graphical user interface built using JFrame (Swing) and MySQL database.
 
-## Features
-### Core Functionality
+## Features 
+### Core Functionality ✨
 - Car Categories Management: Add and manage car categories (Small, Large, Economic, Jeep)
 
 - Car Management: Register cars with details (category, model, daily cost, engine size, seats)
@@ -11,7 +11,7 @@ A Java desktop application for managing a car rental agency with a graphical use
 
 - Rental Management: Process car rentals linking customers with cars for specified durations
 
-### Query & Display Features
+### Query & Display Features 🚀
 - Available Cars: View all cars currently available for rent
 
 - Customer Rentals: Display all rentals for a specific customer
@@ -20,7 +20,7 @@ A Java desktop application for managing a car rental agency with a graphical use
 
 - Search Functionality: Find cars or customers through search interface
 
-### Technologies Used
+### Technologies Used ⚙️
 - Java - Core programming language
 
 - Swing (JFrame) - GUI framework
@@ -31,7 +31,7 @@ A Java desktop application for managing a car rental agency with a graphical use
 
 - IntelliJ IDEA - Development environment
 
-### Prerequisites
+### Prerequisites 🔧
 - Java Development Kit (JDK) 8 or higher
 
 - MySQL Server 5.7 or higher
@@ -39,7 +39,8 @@ A Java desktop application for managing a car rental agency with a graphical use
 - MySQL Connector/J (JDBC driver)
 
 <details>
-<summary>Database Setup</summary>
+<summary>Database Setup 🗄️</summary>
+   
 The database schema is included in the car_rental_db.sql file. The ***main tables*** are:
 
 - categories - Car categories
@@ -63,8 +64,10 @@ CREATE DATABASE car_rental_db;
 mysql -u root -p car_rental_db < car_rental_db.sql
 ```
 </details>
+
 <details>
-<summary>Installation</summary>
+<summary>Installation 📦</summary>
+   
 1. Clone the repository
 
 ```bash
@@ -72,9 +75,9 @@ git clone https://github.com/yourusername/car-rental-app-Java.git
 ```
 2. Configure database connection
 
-3.Update src/db.properties with your MySQL credentials:
+3. Update src/db.properties with your MySQL credentials:
 
-**_Properties_**
+***Properties***
 ```
 db.url=jdbc:mysql://localhost:3306/car_rental_db?useSSL=false&serverTimezone=UTC
 db.username=your_username
@@ -92,7 +95,7 @@ db.password=your_password
    
 </details>
 
-### Usage
+### Usage 🎯
 
 1. Launch the application by running Main.java
 
@@ -108,7 +111,7 @@ db.password=your_password
 
   - Reports: View rental history and search
 
-### Contact
+### Contact 📫
 Alexandros Vlandos - alexvla@windowslive.com
 
 [Project Link](https://github.com/Alex-Vlandos/car-rental-app-Java)
