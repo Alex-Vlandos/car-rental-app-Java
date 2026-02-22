@@ -40,7 +40,7 @@ A Java desktop application for managing a car rental agency with a graphical use
 
 <details>
 <summary>Database Setup</summary>
-The database schema is included in the car_rental_db.sql file. The *main tables* are:
+The database schema is included in the car_rental_db.sql file. The ***main tables*** are:
 
 - categories - Car categories
 
