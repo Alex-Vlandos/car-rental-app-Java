@@ -38,7 +38,8 @@ A Java desktop application for managing a car rental agency with a graphical use
 
 - MySQL Connector/J (JDBC driver)
 
-### Database Setup
+<details>
+<summary>Database Setup</summary>
 The database schema is included in the car_rental_db.sql file. The *main tables* are:
 
 - categories - Car categories
@@ -51,90 +52,64 @@ The database schema is included in the car_rental_db.sql file. The *main tables*
 
 #### To set up the database:
 
-1.Create the database
+1. Create the database
 
-sql
+```sql
 CREATE DATABASE car_rental_db;
-Import the schema
+```
+2. Import the schema
 
-bash
-mysql -u root -p car_rental_db < database/schema.sql
-Installation
-Clone the repository
+```bash
+mysql -u root -p car_rental_db < car_rental_db.sql
+```
+</details>
+<details>
+<summary>Installation</summary>
+1. Clone the repository
 
-bash
-git clone https://github.com/yourusername/car-rental-management.git
-Configure database connection
+```bash
+git clone https://github.com/yourusername/car-rental-app-Java.git
+```
+2. Configure database connection
 
-Update src/db.properties with your MySQL credentials:
+3.Update src/db.properties with your MySQL credentials:
 
-properties
+**_Properties_**
+```
 db.url=jdbc:mysql://localhost:3306/car_rental_db?useSSL=false&serverTimezone=UTC
 db.username=your_username
 db.password=your_password
-Add MySQL Connector
+```
+4. Add MySQL Connector
 
-Download MySQL Connector/J and add the JAR file to your project classpath
+5. Download MySQL Connector/J and add the JAR file to your project classpath
 
-Run the application
+6. Run the application
 
-Open the project in IntelliJ IDEA
+7. Open the project in IntelliJ IDEA
 
-Build and run Main.java
+8. Build and run Main.java
+   
+</details>
 
-Project Structure
-text
-car-rental-management/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   ├── com/
-│   │   │   │   └── carrental/
-│   │   │   │       ├── model/         # Entity classes
-│   │   │   │       ├── dao/            # Data Access Objects
-│   │   │   │       ├── gui/            # JFrame forms
-│   │   │   │       ├── db/             # Database connection
-│   │   │   │       └── Main.java       # Application entry point
-│   │   │   └── resources/
-│   │   │       └── db.properties       # Database configuration
-│   └── test/                            # Unit tests
-├── database/
-│   └── schema.sql                       # Database schema
-├── lib/
-│   └── mysql-connector-java-x.x.xx.jar  # MySQL JDBC driver
-├── README.md
-└── .gitignore
-Usage
-Launch the application by running Main.java
+### Usage
 
-Use the tabs to navigate between different sections:
+1. Launch the application by running Main.java
 
-Categories: Add/edit car categories
+2. Use the tabs to navigate between different sections:
 
-Cars: Register new cars
+  - Categories: Add/edit car categories
 
-Customers: Manage customer information
+  - Cars: Register new cars
 
-Rentals: Process new rentals
+  - Customers: Manage customer information
 
-Reports: View rental history and search
+  - Rentals: Process new rentals
 
-Contributing
-Fork the repository
+  - Reports: View rental history and search
 
-Create a feature branch (git checkout -b feature/NewFeature)
+### Contact
+Alexandros Vlandos - alexvla@windowslive.com
 
-Commit your changes (git commit -m 'Add some NewFeature')
-
-Push to the branch (git push origin feature/NewFeature)
-
-Open a Pull Request
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Contact
-Your Name - your.email@example.com
-
-Project Link: https://github.com/yourusername/car-rental-management
+[Project Link](https://github.com/Alex-Vlandos/car-rental-app-Java)
 
