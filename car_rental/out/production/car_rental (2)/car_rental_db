@@ -1,0 +1,94 @@
+//Here is mySQL code for the database
+create if not exists database car_rental_db;
+
+create table if not exists car_categories
+(car_categories_id int auto_increment,
+car_size varchar(254),
+car_price varchar(254),
+car_type varchar(254),
+primary key (car_categories_id))
+;
+alter table car_categories
+add constraint unique_category unique(car_size,car_price,car_type);
+
+create table if not exists cars
+(car_id int auto_increment,
+category_id int,
+car_model varchar(50),
+cost_per_day double,
+cubic_capacity int,
+number_of_seats int,
+primary key (car_id),
+foreign key (category_id) references car_categories(car_categories_id) on delete cascade)
+;
+
+create table if not exists customers
+(customer_id int auto_increment,
+first_name varchar(254),
+last_name varchar(254),
+sex enum("male","female"),
+address varchar(254),
+email varchar(254),
+phone varchar(20),
+primary key (customer_id))
+;
+
+alter table customers
+add constraint unique_customer unique(first_name,last_name,sex,address,email,phone);
+
+create table if not exists rentals
+(rental_id int auto_increment,
+customer_id int,
+car_id int,
+days_of_rental int,
+start_date date,
+end_date date,
+primary key (rental_id),
+foreign key (customer_id) references customers(customer_id) on delete cascade,
+foreign key (car_id) references cars(car_id) on delete cascade)
+;
+INSERT INTO car_categories (car_size, car_price, car_type) VALUES
+('Small', 'Economy', 'City'),
+('Medium', 'Standard', 'Sedan'),
+('Large', 'Premium', 'Family'),
+('SUV', 'Luxury', 'Off-road'),
+('Compact', 'Budget', 'Hatchback'),
+('Convertible', 'Premium', 'Sport');
+
+INSERT INTO cars (category_id, car_model, cost_per_day, cubic_capacity, number_of_seats) VALUES
+(1, 'Toyota Aygo', 30.0, 998, 4),
+(1, 'Fiat Panda', 28.0, 999, 4),
+(2, 'Honda Civic', 45.0, 1498, 5),
+(2, 'Mazda 3', 47.0, 1500, 5),
+(3, 'Volkswagen Passat', 65.0, 1600, 5),
+(3, 'Skoda Superb', 68.0, 1800, 5),
+(4, 'Jeep Wrangler', 85.0, 2200, 5),
+(4, 'Toyota Land Cruiser', 95.0, 2800, 7),
+(5, 'Ford Fiesta', 33.0, 1100, 5),
+(5, 'Renault Clio', 35.0, 1200, 5),
+(6, 'Mazda MX-5', 75.0, 2000, 2),
+(6, 'BMW Z4', 120.0, 2500, 2);
+
+INSERT INTO customers (first_name, last_name, sex, address, email, phone) VALUES
+('John', 'Doe', 'male', '123 Elm Street', 'john.doe@example.com', '555-1234'),
+('Jane', 'Smith', 'female', '456 Oak Avenue', 'jane.smith@example.com', '555-5678'),
+('Robert', 'Johnson', 'male', '789 Pine Road', 'robert.johnson@example.com', '555-8765'),
+('Emily', 'Davis', 'female', '321 Maple Lane', 'emily.davis@example.com', '555-4321'),
+('Michael', 'Brown', 'male', '22 Cedar Blvd', 'michael.brown@example.com', '555-2222'),
+('Olivia', 'Wilson', 'female', '77 Birch Way', 'olivia.wilson@example.com', '555-3333'),
+('William', 'Taylor', 'male', '88 Willow Lane', 'william.taylor@example.com', '555-4444'),
+('Emma', 'Moore', 'female', '99 Cherry Circle', 'emma.moore@example.com', '555-5555');
+
+INSERT INTO rentals (customer_id, car_id, days_of_rental, start_date, end_date) VALUES
+(1, 3, 5, '2025-06-01', '2025-06-06'),
+(2, 1, 3, '2025-06-03', '2025-06-06'),
+(3, 4, 7, '2025-06-05', '2025-06-12'),
+(4, 2, 2, '2025-06-02', '2025-06-04'),
+(5, 5, 6, '2025-06-10', '2025-06-16'),
+(6, 6, 1, '2025-06-15', '2025-06-16'),
+(7, 8, 3, '2025-06-12', '2025-06-15'),
+(8, 7, 4, '2025-06-14', '2025-06-18'),
+(1, 9, 2, '2025-06-20', '2025-06-22'),
+(2, 10, 3, '2025-06-19', '2025-06-22'),
+(3, 11, 2, '2025-06-21', '2025-06-23'),
+(4, 12, 5, '2025-06-22', '2025-06-27');
